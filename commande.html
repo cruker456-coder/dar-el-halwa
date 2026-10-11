@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commander - Dar El Halwa</title>
+  </head>
+  <body>
+    <nav></nav>
+    <main>
+      <h1>Commander un gâteau personnalisé</h1>
+      <form action="traitement.php" method="post">
+        <fieldset>
+          <legend>Vos coordonnées</legend>
+          
+          <label for="nom">Nom :</label>
+          <input type="text" minlength="2" id="nom" name="nom" required />
+          
+          <label for="prenom">Prénom :</label>
+          <input type="text" minlength="2" id="prenom" name="prenom" required />
+          
+          <label for="email">Adresse électronique :</label>
+          <input type="email" id="email" name="email" required />
+          
+          <label for="telephone">Téléphone :</label>
+          <input
+            type="tel"
+            pattern="\+216[0-9]{8}"
+            title="+216 suivi de 8 chiffres"
+            placeholder="+21622550211"
+            required
+            id="telephone"
+            name="telephone"
+          />
+          
+          <label for="code-postal">Code postal :</label>
+          <input type="text" id="code-postal" name="code_postal" pattern="[0-9]{4}" /><br />
+          
+          <label for="adresse">Adresse de livraison :</label>
+          <textarea id="adresse" name="adresse" cols="40" rows="3" required></textarea>
+          
+          <label for="gouvernorat">Gouvernorat :</label>
+          <select id="gouvernorat" name="gouvernorat">
+            <option value="sf" selected>Sfax</option>
+            <option value="tu">Tunis</option>
+            <option value="so">Sousse</option>
+            <option value="g">Gabès</option>
+            <option value="ga">Gafsa</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Votre gâteau</legend>
+          <p>Occasion :</p>
+          
+          <input
+            type="radio"
+            id="anniversaire"
+            name="occasion"
+            value="Anniversaire"
+            required
+          />
+          <label for="anniversaire">Anniversaire</label>
+          
+          <input type="radio" id="mariage" name="occasion" value="Mariage" />
+          <label for="mariage">Mariage</label>
+          
+          <input
+            type="radio"
+            id="fiancailles"
+            name="occasion"
+            value="Fiançailles"
+          />
+          <label for="fiancailles">Fiançailles</label><br /><br />
+
+          <label for="date-retrait">Date de retrait :</label>
+          <input type="date" required max="2026-09-01" id="date-retrait" name="date_retrait" /><br /><br />
+
+          <label for="nombre-parts">Nombre de parts :</label>
+          <input
+            type="number"
+            min="6"
+            max="100"
+            step="2"
+            value="12"
+            id="nombre-parts"
+            name="nombre_parts"
+          /><br /><br />
+
+          <label>Parfums souhaités :</label>
+          <input type="checkbox" id="chocolat" name="parfums[]" value="Chocolat" />
+          <label for="chocolat">Chocolat</label>
+          
+          <input type="checkbox" id="vanille" name="parfums[]" value="Vanille" checked />
+          <label for="vanille">Vanille</label>
+          
+          <input type="checkbox" id="pistache" name="parfums[]" value="Pistache" />
+          <label for="pistache">Pistache</label>
+          
+          <input type="checkbox" id="fruits-rouges" name="parfums[]" value="Fruits rouges" />
+          <label for="fruits-rouges">Fruits rouges</label><br /><br />
+
+          <label for="niveau-sucre">Niveau de sucre :</label>
+          <input type="range" min="0" max="10" value="5" id="niveau-sucre" name="niveau_sucre" /><br /><br />
+
+          <label for="couleur-glacage">Couleur du glaçage :</label>
+          <input type="color" id="couleur-glacage" name="couleur_glacage" /><br /><br />
+
+          <label for="message-gateau">Message sur le gâteau :</label>
+          <input type="text" id="message-gateau" name="message_gateau" maxlength="30" /><br /><br />
+
+          <label for="photo-modele">Photo de modèle :</label>
+          <input type="file" id="photo-modele" name="photo_modele" accept="image/*" /><br /><br />
+
+          <label for="decors">Langages de décoration :</label><br />
+          <select multiple size="4" id="decors" name="decors[]">
+            <option value="fleurs">Fleurs en pâte à sucre</option>
+            <option value="fruits">Fruits frais</option>
+            <option value="biscuit">Biscuit</option>
+            <option value="fruit sec">Fruit sec</option>
+          </select><br /><br />
+
+          <label for="precisions">Précisions :</label><br />
+          <textarea
+            id="precisions"
+            name="precisions"
+            cols="40"
+            rows="4"
+            maxlength="200"
+          ></textarea>
+        </fieldset>
+
+        <p>
+          <button type="submit">Envoyer ma commande</button>
+          <button type="reset">Tout effacer</button>
+        </p>
+      </form>
+      <a href="index.html">retour</a>
+    </main>
+    <footer></footer>
+  </body>
+</html>
